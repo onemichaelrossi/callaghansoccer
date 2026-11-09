@@ -31,6 +31,33 @@ a:focus-visible{outline:3px solid #F77B2E;outline-offset:3px}
   header nav[aria-label="Main"]{display:none!important}
   .hero-bg [style*="left: -28px"]{left:12px!important}
 }
+
+.mbar{display:none}
+@media (max-width:760px){
+  .wrap{padding-left:20px!important;padding-right:20px!important}
+  section .wrap{padding-top:52px!important;padding-bottom:52px!important}
+  .hdr{padding:8px 16px!important;flex-wrap:nowrap!important;gap:12px!important}
+  .logo{height:64px!important}
+  .hdr-actions{display:none!important}
+  .mnav{display:block;margin-left:auto}
+  section .hero-wrap{padding-top:40px!important;padding-bottom:44px!important;gap:40px!important}
+  .hero-lede{font-size:17px!important;margin-top:18px!important}
+  .hero-cta{margin-top:26px!important}
+  .hero-cta a{flex:1 1 100%;justify-content:center}
+  .hero-icons{margin-top:32px!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .hero-img{height:300px!important;border-width:4px!important}
+  .hero-badge{left:12px!important;bottom:12px!important;padding:10px 14px!important}
+  .hero-badge div:first-child{font-size:30px!important}
+  .hero-script{font-size:24px!important;top:-20px!important;right:6px!important}
+  .quote{font-size:19px!important}
+  .card-pad{padding:28px 22px!important}
+  .card-img{height:240px!important;min-height:0!important;flex:1 1 100%!important;width:100%!important}
+  footer .wrap{padding-bottom:96px!important}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #e3e3e3;box-shadow:0 -6px 20px rgba(0,0,0,.08)}
+  .mbar a{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:8px;font-family:'PT Sans Narrow',sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .mbar .call{border:2px solid #212222;color:#212222}
+  .mbar .book{background:#B92025;color:#fff}
+}
 </style>
 </head>
 <body>
@@ -38,8 +65,8 @@ a:focus-visible{outline:3px solid #F77B2E;outline-offset:3px}
 
 <!-- HEADER -->
 <header style="background: #ffffff; border-bottom: 4px solid #B92025">
-  <div style="max-width: 1280px; margin: 0 auto; padding: 14px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
-    <a href="#" style="display: flex; align-items: center"><img src="assets/img/logo-cs.png" alt="Callaghan Soccer" style="height: 88px; width: auto; display: block"></a>
+  <div class="wrap hdr" style="max-width: 1280px; margin: 0 auto; padding: 14px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+    <a href="#" style="display: flex; align-items: center"><img src="assets/img/logo-cs.png" class="logo" alt="Callaghan Soccer" style="height: 88px; width: auto; display: block"></a>
     <details class="mnav">
       <summary aria-label="Open menu"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#212222" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></summary>
       <nav aria-label="Mobile">
@@ -55,7 +82,7 @@ a:focus-visible{outline:3px solid #F77B2E;outline-offset:3px}
       <a href="#" style="color: #212222; padding: 6px 0">Photo Gallery</a>
       <a href="#" style="color: #212222; padding: 6px 0">Contact</a>
     </nav>
-    <div style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap">
+    <div class="hdr-actions" style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap">
       <a href="tel:6022140780" style="color: #212222; font-weight: 700; font-size: 16px; display: flex; align-items: center; gap: 8px">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B92025" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg>
         (602) 214 0780</a>
@@ -67,17 +94,17 @@ a:focus-visible{outline:3px solid #F77B2E;outline-offset:3px}
 
 <!-- HERO -->
 <section class="hero-bg" style="color: #ffffff">
-  <div style="max-width: 1280px; margin: 0 auto; padding: 72px 32px 56px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+  <div class="wrap hero-wrap" style="max-width: 1280px; margin: 0 auto; padding: 72px 32px 56px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
     <div style="flex: 1 1 520px; min-width: 0">
       <p style="margin: 0 0 18px; font-size: 14px; letter-spacing: .32em; text-transform: uppercase; color: #F79A5E; font-weight: 700">English Soccer Camps · Est. 1993</p>
       <h1 style="margin: 0; font-family: 'PT Sans Narrow', sans-serif; font-size: clamp(44px, 6vw, 84px); line-height: .98; text-transform: uppercase; letter-spacing: .01em">Summer Soccer<br>Camps 2026<br><span style="color: #F0473F">Now Booking</span></h1>
-      <p style="margin: 26px 0 0; font-size: 20px; line-height: 1.55; max-width: 560px; color: #E9E9E9">Spring break and summer camps for players of all ability levels — from the Pebble Beach and Carmel area of Northern California to the Desert Southwest and the Rocky Mountain states.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 34px">
+      <p class="hero-lede" style="margin: 26px 0 0; font-size: 20px; line-height: 1.55; max-width: 560px; color: #E9E9E9">Spring break and summer camps for players of all ability levels — from the Pebble Beach and Carmel area of Northern California to the Desert Southwest and the Rocky Mountain states.</p>
+      <div class="hero-cta" style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 34px">
         <a href="#" style="background: #B92025; color: #ffffff; font-family: 'PT Sans Narrow', sans-serif; font-size: 20px; letter-spacing: .06em; text-transform: uppercase; padding: 16px 30px; border-radius: 8px; display: inline-flex; align-items: center; gap: 12px; min-height: 44px; box-sizing: border-box">View 2026 Camps
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
         <a href="#" style="border: 2px solid #ffffff; color: #ffffff; font-family: 'PT Sans Narrow', sans-serif; font-size: 20px; letter-spacing: .06em; text-transform: uppercase; padding: 14px 30px; border-radius: 8px; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box">Host a Camp</a>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-top: 48px; max-width: 640px">
+      <div class="hero-icons" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-top: 48px; max-width: 640px">
         <div style="display: flex; align-items: center; gap: 12px">
           <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3.2"></circle><path d="M3 20v-1a6 6 0 0 1 12 0v1"></path><circle cx="17.5" cy="8.5" r="2.5"></circle><path d="M17 14a5 5 0 0 1 4.5 5v1"></path></svg>
           <span style="font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; line-height: 1.3">All abilities<br>welcome</span>
@@ -98,12 +125,12 @@ a:focus-visible{outline:3px solid #F77B2E;outline-offset:3px}
     </div>
     <div style="flex: 1 1 420px; min-width: 0; position: relative; display: flex; justify-content: center">
       <div style="position: relative; width: 100%; max-width: 520px">
-        <img src="assets/img/hero-players.jpg" alt="Two young players racing for the ball" style="width: 100%; height: 500px; object-fit: cover; object-position: 50% 55%; border-radius: 20px; border: 6px solid #ffffff; box-sizing: border-box; display: block; box-shadow: 0 24px 60px rgba(0,0,0,.45)">
-        <div style="position: absolute; left: -28px; bottom: 36px; background: #B92025; color: #ffffff; padding: 18px 22px; border-radius: 14px; box-shadow: 0 12px 30px rgba(0,0,0,.35)">
+        <img class="hero-img" src="assets/img/hero-players.jpg" alt="Two young players racing for the ball" style="width: 100%; height: 500px; object-fit: cover; object-position: 50% 55%; border-radius: 20px; border: 6px solid #ffffff; box-sizing: border-box; display: block; box-shadow: 0 24px 60px rgba(0,0,0,.45)">
+        <div class="hero-badge" style="position: absolute; left: -28px; bottom: 36px; background: #B92025; color: #ffffff; padding: 18px 22px; border-radius: 14px; box-shadow: 0 12px 30px rgba(0,0,0,.35)">
           <div style="font-family: 'PT Sans Narrow', sans-serif; font-size: 40px; line-height: 1">30+</div>
           <div style="font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-top: 4px">Years of camps</div>
         </div>
-        <p style="position: absolute; right: -8px; top: -30px; margin: 0; font-family: 'Caveat', cursive; font-size: 34px; line-height: 1.05; color: #ffffff; transform: rotate(-6deg); text-align: right; text-shadow: 0 2px 10px rgba(0,0,0,.6)">Skills.<br>Confidence.<br>Fun.</p>
+        <p class="hero-script" style="position: absolute; right: -8px; top: -30px; margin: 0; font-family: 'Caveat', cursive; font-size: 34px; line-height: 1.05; color: #ffffff; transform: rotate(-6deg); text-align: right; text-shadow: 0 2px 10px rgba(0,0,0,.6)">Skills.<br>Confidence.<br>Fun.</p>
       </div>
     </div>
   </div>
@@ -111,7 +138,7 @@ a:focus-visible{outline:3px solid #F77B2E;outline-offset:3px}
 
 <!-- PROGRAMS -->
 <section style="background: #F5F4F2">
-  <div style="max-width: 1280px; margin: 0 auto; padding: 80px 32px">
+  <div class="wrap" style="max-width: 1280px; margin: 0 auto; padding: 80px 32px">
     <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 40px; margin-bottom: 40px">
       <div style="flex: 1 1 420px">
         <p style="margin: 0 0 10px; font-size: 14px; letter-spacing: .32em; text-transform: uppercase; color: #6B6B6B; font-weight: 700">Our camps</p>
@@ -173,7 +200,7 @@ a:focus-visible{outline:3px solid #F77B2E;outline-offset:3px}
 
 <!-- IMPACT BAND -->
 <section class="impact-bg" style="color: #ffffff; border-top: 4px solid #B92025">
-  <div style="max-width: 1280px; margin: 0 auto; padding: 56px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 32px 56px">
+  <div class="wrap" style="max-width: 1280px; margin: 0 auto; padding: 56px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 32px 56px">
     <div style="flex: 1 1 280px">
       <p style="margin: 0 0 10px; font-size: 14px; letter-spacing: .32em; text-transform: uppercase; color: #F79A5E; font-weight: 700">Our story</p>
       <h2 style="margin: 0; font-family: 'PT Sans Narrow', sans-serif; font-size: clamp(34px, 3.6vw, 48px); line-height: 1.02; text-transform: uppercase">English coaching,<br><span style="color: #F0473F">American summers</span></h2>
@@ -201,18 +228,18 @@ a:focus-visible{outline:3px solid #F77B2E;outline-offset:3px}
 
 <!-- TESTIMONIAL + CTA -->
 <section style="background: #ffffff">
-  <div style="max-width: 1280px; margin: 0 auto; padding: 72px 32px; display: flex; flex-wrap: wrap; gap: 28px">
+  <div class="wrap" style="max-width: 1280px; margin: 0 auto; padding: 72px 32px; display: flex; flex-wrap: wrap; gap: 28px">
     <div style="flex: 1 1 520px; min-width: 0; background: #FBEDED; border-radius: 18px; overflow: hidden; display: flex; flex-wrap: wrap">
-      <div style="flex: 1 1 300px; padding: 40px 36px">
+      <div class="card-pad" style="flex: 1 1 300px; padding: 40px 36px">
         <p style="margin: 0 0 18px; font-size: 13px; letter-spacing: .32em; text-transform: uppercase; color: #6B6B6B; font-weight: 700">What they said</p>
         <svg width="36" height="28" viewBox="0 0 36 28" fill="#B92025" aria-hidden="true"><path d="M0 28V16C0 7 5 1.5 14 0l1.5 4C10 5.5 7.5 9 7.5 13H14v15H0zm21 0V16C21 7 26 1.5 35 0l1 4c-5.5 1.5-8 5-8 9h7v15H21z"></path></svg>
-        <blockquote style="margin: 14px 0 0; font-size: 22px; line-height: 1.45; color: #212222">I was really impressed with your coaching skill set and your method of interacting with the players.</blockquote>
+        <blockquote class="quote" style="margin: 14px 0 0; font-size: 22px; line-height: 1.45; color: #212222">I was really impressed with your coaching skill set and your method of interacting with the players.</blockquote>
         <p style="margin: 18px 0 0; font-size: 15px; color: #4A4A4A; font-style: italic">— Aaron R., Gilbert, AZ</p>
       </div>
-      <img src="assets/img/girl.jpg" alt="A girl heading the ball" style="flex: 1 1 220px; min-height: 260px; width: 0; object-fit: cover; object-position: 50% 30%; display: block">
+      <img class="card-img" src="assets/img/girl.jpg" alt="A girl heading the ball" style="flex: 1 1 220px; min-height: 260px; width: 0; object-fit: cover; object-position: 50% 30%; display: block">
     </div>
     <div style="flex: 1 1 420px; min-width: 0; background: #212222; color: #ffffff; border-radius: 18px; overflow: hidden; display: flex; flex-wrap: wrap">
-      <div style="flex: 1 1 260px; padding: 40px 36px; display: flex; flex-direction: column">
+      <div class="card-pad" style="flex: 1 1 260px; padding: 40px 36px; display: flex; flex-direction: column">
         <p style="margin: 0 0 14px; font-size: 13px; letter-spacing: .32em; text-transform: uppercase; color: #F79A5E; font-weight: 700">Ready to get started?</p>
         <h2 style="margin: 0; font-family: 'PT Sans Narrow', sans-serif; font-size: 36px; line-height: 1.05; text-transform: uppercase">Bring Callaghan's to your town</h2>
         <p style="margin: 14px 0 26px; font-size: 16px; line-height: 1.5; color: #E9E9E9; flex: 1">Planning spring break and summer 2026 now — hosts, get in touch early as dates fill fast.</p>
@@ -222,14 +249,14 @@ a:focus-visible{outline:3px solid #F77B2E;outline-offset:3px}
           <a href="tel:6022140780" style="color: #ffffff; font-weight: 700; font-size: 17px; display: inline-flex; align-items: center; min-height: 44px; padding: 0 6px">(602) 214 0780</a>
         </div>
       </div>
-      <img src="assets/img/coach-ed.jpg" alt="Coach Ed Callaghan at the LA Galaxy stadium" style="flex: 1 1 160px; min-height: 260px; width: 0; object-fit: cover; object-position: 50% 40%; display: block">
+      <img class="card-img" src="assets/img/coach-ed.jpg" alt="Coach Ed Callaghan at the LA Galaxy stadium" style="flex: 1 1 160px; min-height: 260px; width: 0; object-fit: cover; object-position: 50% 40%; display: block">
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer style="background: #161718; color: #ffffff; border-top: 4px solid #B92025">
-  <div style="max-width: 1280px; margin: 0 auto; padding: 40px 32px 24px">
+  <div class="wrap" style="max-width: 1280px; margin: 0 auto; padding: 40px 32px 24px">
     <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 40px">
       <div style="background: #ffffff; border-radius: 12px; padding: 8px 14px; display: inline-flex">
         <img src="assets/img/logo-cs.png" alt="Callaghan Soccer" style="height: 70px; width: auto; display: block">
@@ -251,6 +278,10 @@ a:focus-visible{outline:3px solid #F77B2E;outline-offset:3px}
   </div>
 </footer>
 
+</div>
+<div class="mbar" role="navigation" aria-label="Quick actions">
+  <a class="call" href="tel:6022140780"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg>Call</a>
+  <a class="book" href="#">Book a Camp</a>
 </div>
 </body>
 </html>
