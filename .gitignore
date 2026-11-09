@@ -1,0 +1,6 @@
+# Working files, not part of the website
+site-photos/
+stock-photos/
+*.zip
+Thumbs.db
+desktop.ini
